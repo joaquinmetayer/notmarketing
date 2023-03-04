@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 90vh;
+    height: 80vh;
 }
 .logo-complete-hero{
     padding-top: 100px;
@@ -34,7 +34,19 @@ img{
     width: 100%;
 }
 body{
+    height: 100vh;
     padding: 20px;
     background-image: url('./img/background-hero.png');
     background-position: center;
+}
+@media (max-width: 700px) {
+    .nm-logo-hero{
+        width: 200px;
+    }
+    .nm-circles-hero{
+        width: 100px;
+    }
+    .coming-soon{
+        font-size: 30px;
+    }
 }
