@@ -3,17 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      NotMarketing.
+      Not Marketing.
     </title>
     <link rel="stylesheet" href="./assets/css/story.css" />
   </head>
   <body>
-    <button id="prev-btn" onclick="prevImage()">Anterior</button>
-    <button id="play-pause-btn" onclick="playPause()">Play/Pausa</button>
-    <button id="next-btn" onclick="nextImage()">Siguiente</button>
-
     <div class="story-container">
       <div class="story">
+        <div class="button-invisible" id="button-prev" onclick="prevImage()"></div>
+        <div class="button-invisible" id="button-next" onclick="nextImage()"></div>
         <div class="pause">
           <div class="progress-container">
             <div style="animation-duration: 2s" class="progress image-index-0"></div>
@@ -21,11 +19,10 @@
             <div style="animation-duration: 3s" class="progress image-index-2"></div>
             <div style="animation-duration: 3s" class="progress image-index-3"></div>
             <div style="animation-duration: 3s" class="progress image-index-4"></div>
-            <div style="animation-duration: 3s" class="progress image-index-5"></div>
-            <div style="animation-duration: 3s" class="progress image-index-6"></div>
           </div>
         </div>
-        <img src="" class="img-story">
+        <img class="img-story"></img>
+        <video class="video-story" autoplay muted></video>
       </div>
     </div>
     <script src="./assets/js/story.js"></script>

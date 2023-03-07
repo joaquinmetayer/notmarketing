@@ -1,23 +1,44 @@
 const progressContainer = document.querySelector(".progress-container");
 const progress = Array.from(document.querySelectorAll(".progress"));
+const videoStory = document.querySelector(".video-story");
 const imgStory = document.querySelector(".img-story");
 const progressBar = document.querySelector(".progress");
 const progressBarContainer = document.querySelector(".progress-container");
 const status = document.querySelector(".status");
+const pauseVideo = document.getElementsByClassName("pause")[0];
 let intervalId = null;
 
 const images = [
-  { src: "./assets/img/01.jpg", duration: 2000 },
-  { src: "./assets/img/02.jpg", duration: 5000 },
-  { src: "./assets/img/03.jpg", duration: 3000 },
-  { src: "./assets/img/04.jpg", duration: 3000 },
-  { src: "./assets/img/05.jpg", duration: 3000 },
-  { src: "./assets/img/06.jpg", duration: 3000 },
-  { src: "./assets/img/07.jpg", duration: 3000 },
+  { type: "image", src: "./assets/img/01.jpg", duration: 2000 },
+  { type: "video", src: "./assets/vid/01.mp4", duration: 5000 },
+  { type: "image", src: "./assets/img/02.jpg", duration: 3000 },
+  { type: "image", src: "./assets/img/03.jpg", duration: 3000 },
+  { type: "video", src: "./assets/vid/02.mp4", duration: 3000 },
 ];
+
+if (pauseVideo) {
+  pauseVideo.addEventListener("mouseout", reanudarVideos);
+  pauseVideo.addEventListener("mouseover", pausarVideos);
+}
 
 let currentImageIndex = 0;
 let currentDuration = images[currentImageIndex].duration;
+
+function pausarVideos() {
+  const videos = document.getElementsByTagName('video');
+  for (let i = 0; i < videos.length; i++) {
+    videos[i].pause();
+  }
+}
+function reanudarVideos() {
+  const videos = document.getElementsByTagName('video');
+  for (let i = 0; i < videos.length; i++) {
+    videos[i].play();
+  }
+}
+
+
+
 
 const playNext = (e) => {
   const current = e && e.target;
@@ -36,8 +57,18 @@ const playNext = (e) => {
     if (currentImageIndex >= images.length) {
       currentImageIndex = 0;
     }
-    currentDuration = images[currentImageIndex].duration;
-    imgStory.src = images[currentImageIndex].src;
+    const currentImage = images[currentImageIndex];
+    currentDuration = currentImage.duration;
+    if (currentImage.type === "image") {
+      imgStory.style.display = "block";
+      videoStory.style.display = "none";
+      imgStory.src = currentImage.src;
+    } else if (currentImage.type === "video") {
+      imgStory.style.display = "none";
+      videoStory.style.display = "block";
+      videoStory.src = currentImage.src;
+      videoStory.play();
+    }
   }
   if (!next) {
     progress.map((el) => {
@@ -46,7 +77,17 @@ const playNext = (e) => {
     });
     currentImageIndex = 0;
     currentDuration = images[currentImageIndex].duration;
-    imgStory.src = images[currentImageIndex].src;
+    const currentImage = images[currentImageIndex];
+    if (currentImage.type === "image") {
+      imgStory.style.display = "block";
+      videoStory.style.display = "none";
+      imgStory.src = currentImage.src;
+    } else if (currentImage.type === "video") {
+      imgStory.style.display = "none";
+      videoStory.style.display = "block";
+      videoStory.src = currentImage.src;
+      videoStory.play();
+    }
     next = progress[0];
   }
   next.classList.add("active");
@@ -65,6 +106,12 @@ progressContainer.addEventListener("click", clickHandler, false);
 playNext();
 
 const prevImage = () => {
+  if (videoStory.paused === false) {
+    videoStory.pause();
+  }
+  if (images[currentImageIndex].type === "video") {
+    currentDuration = videoStory.duration * 1000;
+  }
   const current = progress.find((el) => el.classList.contains("active"));
   const currentIndex = progress.indexOf(current);
   console.log(currentIndex);
@@ -83,7 +130,16 @@ const prevImage = () => {
         currentImageIndex = images.length - 1;
       }
       currentDuration = images[currentImageIndex].duration;
-      imgStory.src = images[currentImageIndex].src;
+      if (images[currentImageIndex].type === "image") {
+        imgStory.src = images[currentImageIndex].src;
+        imgStory.style.display = "block";
+        videoStory.style.display = "none";
+      } else if (images[currentImageIndex].type === "video") {
+        videoStory.src = images[currentImageIndex].src;
+        imgStory.style.display = "none";
+        videoStory.style.display = "block";
+        videoStory.play();
+      }
     }
     if (!prev) {
       progress.map((el) => {
@@ -91,7 +147,16 @@ const prevImage = () => {
       });
       currentImageIndex = images.length - 1;
       currentDuration = images[currentImageIndex].duration;
-      imgStory.src = images[currentImageIndex].src;
+      if (images[currentImageIndex].type === "image") {
+        imgStory.src = images[currentImageIndex].src;
+        imgStory.style.display = "block";
+        videoStory.style.display = "none";
+      } else if (images[currentImageIndex].type === "video") {
+        videoStory.src = images[currentImageIndex].src;
+        imgStory.style.display = "none";
+        videoStory.style.display = "block";
+        videoStory.play();
+      }
       prev = progress[progress.length - 1];
     }
     prev.classList.add("active");
@@ -100,13 +165,19 @@ const prevImage = () => {
 };
 
 const nextImage = () => {
+  if (videoStory.paused === false) {
+    videoStory.pause();
+  }
+  if (images[currentImageIndex].type === "video") {
+    currentDuration = videoStory.duration * 1000;
+  }
   const current = progress.find((el) => el.classList.contains("active"));
   const currentIndex = progress.indexOf(current);
   if (currentIndex !== progress.length - 1) {
     const next = progress[currentIndex + 1];
     current.classList.remove("active");
     current.classList.add("passed");
-    for (let i = 0; i < currentIndex; i++) {
+    for (let i = 0; i <= currentIndex; i++) {
       progress[i].classList.add("passed");
     }
     currentImageIndex++;
@@ -114,7 +185,16 @@ const nextImage = () => {
       currentImageIndex = 0;
     }
     currentDuration = images[currentImageIndex].duration;
-    imgStory.src = images[currentImageIndex].src;
+    if (images[currentImageIndex].type === "image") {
+      imgStory.src = images[currentImageIndex].src;
+      imgStory.style.display = "block";
+      videoStory.style.display = "none";
+    } else if (images[currentImageIndex].type === "video") {
+      videoStory.src = images[currentImageIndex].src;
+      imgStory.style.display = "none";
+      videoStory.style.display = "block";
+      videoStory.play();
+    }
     next.classList.add("active");
     next.style.animationDuration = `${currentDuration / 1000}s`;
   } else {
@@ -125,8 +205,18 @@ const nextImage = () => {
     });
     currentImageIndex = 0;
     currentDuration = images[currentImageIndex].duration;
-    imgStory.src = images[currentImageIndex].src;
+    if (images[currentImageIndex].type === "image") {
+      imgStory.src = images[currentImageIndex].src;
+      imgStory.style.display = "block";
+      videoStory.style.display = "none";
+    } else if (images[currentImageIndex].type === "video") {
+      videoStory.src = images[currentImageIndex].src;
+      imgStory.style.display = "none";
+      videoStory.style.display = "block";
+      videoStory.play();
+    }
     first.classList.add("active");
     first.style.animationDuration = `${currentDuration / 1000}s`;
   }
 };
+
