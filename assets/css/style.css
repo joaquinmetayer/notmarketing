@@ -1,0 +1,78 @@
+@font-face {
+  font-family: Telegraf-Regular;
+  src: url("./font/PPTelegraf-Regular.otf");
+}
+@font-face {
+  font-family: Telegraf-UltraBold;
+  src: url("./font/PPTelegraf-UltraBold.otf");
+}
+@font-face {
+  font-family: Telegraf-UltraLight;
+  src: url("./font/PPTelegraf-UltraLight.otf");
+}
+
+/* COLORS 
+
+BLUE   #281e43
+PINK   #e52762
+ORANGE #ed6e1d
+YELLOW #facd07
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+img {
+  width: 100%;
+}
+
+body {
+  background-color: #281e43;
+}
+
+/* COMING SOON */
+
+.container-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url("../img/background-hero.png");
+  background-position: center;
+}
+.logo-complete-hero {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 10px;
+}
+.nm-logo-hero {
+  width: 400px;
+}
+.nm-circles-hero {
+  width: 200px;
+  padding-bottom: 20px;
+}
+.coming-soon {
+  color: #fff;
+  font-size: 30px;
+  padding-top: 100px;
+}
+@media (max-width: 700px) {
+  .nm-logo-hero {
+    width: 200px;
+  }
+  .nm-circles-hero {
+    width: 100px;
+  }
+  .coming-soon {
+    font-size: 30px;
+  }
+}

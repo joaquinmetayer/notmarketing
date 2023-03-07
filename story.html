@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      NotMarketing.
+    </title>
+    <link rel="stylesheet" href="./assets/css/story.css" />
+  </head>
+  <body>
+    <button id="prev-btn" onclick="prevImage()">Anterior</button>
+    <button id="play-pause-btn" onclick="playPause()">Play/Pausa</button>
+    <button id="next-btn" onclick="nextImage()">Siguiente</button>
+
+    <div class="story-container">
+      <div class="story">
+        <div class="pause">
+          <div class="progress-container">
+            <div style="animation-duration: 2s" class="progress image-index-0"></div>
+            <div style="animation-duration: 5s" class="progress image-index-1"></div>
+            <div style="animation-duration: 3s" class="progress image-index-2"></div>
+            <div style="animation-duration: 3s" class="progress image-index-3"></div>
+            <div style="animation-duration: 3s" class="progress image-index-4"></div>
+            <div style="animation-duration: 3s" class="progress image-index-5"></div>
+            <div style="animation-duration: 3s" class="progress image-index-6"></div>
+          </div>
+        </div>
+        <img src="" class="img-story">
+      </div>
+    </div>
+    <script src="./assets/js/story.js"></script>
+  </body>
+</html>
