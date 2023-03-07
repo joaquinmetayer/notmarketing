@@ -6,39 +6,44 @@ const progressBar = document.querySelector(".progress");
 const progressBarContainer = document.querySelector(".progress-container");
 const status = document.querySelector(".status");
 const pauseVideo = document.getElementsByClassName("pause")[0];
+const buttonInfo = document.querySelector(".button-info");
 let intervalId = null;
 
 const images = [
-  { type: "image", src: "./assets/img/01.jpg", duration: 2000 },
-  { type: "video", src: "./assets/vid/01.mp4", duration: 5000 },
-  { type: "image", src: "./assets/img/02.jpg", duration: 3000 },
-  { type: "image", src: "./assets/img/03.jpg", duration: 3000 },
-  { type: "video", src: "./assets/vid/02.mp4", duration: 3000 },
+  { type: "image", src: "./assets/img/01.jpg", duration: 2000, info: 0 },
+  { type: "video", src: "./assets/vid/01.mp4", duration: 2000, info: 0 },
+  { type: "image", src: "./assets/img/02.jpg", duration: 2000, info: 1 },
+  { type: "image", src: "./assets/img/03.jpg", duration: 20000, info: 0 },
+  { type: "video", src: "./assets/vid/02.mp4", duration: 2000, info: 1 },
 ];
 
 if (pauseVideo) {
   pauseVideo.addEventListener("mouseout", reanudarVideos);
   pauseVideo.addEventListener("mouseover", pausarVideos);
 }
-
 let currentImageIndex = 0;
 let currentDuration = images[currentImageIndex].duration;
 
+function checkImageInfo() {
+  if (images[currentImageIndex].info === 1) {
+    buttonInfo.style.display = "flex";
+    
+  } else {
+    buttonInfo.style.display = "none";
+  }
+}
 function pausarVideos() {
-  const videos = document.getElementsByTagName('video');
+  const videos = document.getElementsByTagName("video");
   for (let i = 0; i < videos.length; i++) {
     videos[i].pause();
   }
 }
 function reanudarVideos() {
-  const videos = document.getElementsByTagName('video');
+  const videos = document.getElementsByTagName("video");
   for (let i = 0; i < videos.length; i++) {
     videos[i].play();
   }
 }
-
-
-
 
 const playNext = (e) => {
   const current = e && e.target;
@@ -92,6 +97,7 @@ const playNext = (e) => {
   }
   next.classList.add("active");
   next.style.animationDuration = `${currentDuration / 1000}s`;
+  checkImageInfo();
 };
 
 const clickHandler = (e) => {
@@ -114,7 +120,6 @@ const prevImage = () => {
   }
   const current = progress.find((el) => el.classList.contains("active"));
   const currentIndex = progress.indexOf(current);
-  console.log(currentIndex);
   if (currentIndex !== 0) {
     const current = progress.find((el) => el.classList.contains("active"));
     let prev;
@@ -162,6 +167,7 @@ const prevImage = () => {
     prev.classList.add("active");
     prev.style.animationDuration = `${currentDuration / 1000}s`;
   }
+  checkImageInfo();
 };
 
 const nextImage = () => {
@@ -218,5 +224,5 @@ const nextImage = () => {
     first.classList.add("active");
     first.style.animationDuration = `${currentDuration / 1000}s`;
   }
+  checkImageInfo();
 };
-
