@@ -13,7 +13,7 @@ const images = [
   { type: "image", src: "./assets/img/01.jpg", duration: 2000, info: 0 },
   { type: "video", src: "./assets/vid/01.mp4", duration: 2000, info: 0 },
   { type: "image", src: "./assets/img/02.jpg", duration: 2000, info: 1 },
-  { type: "image", src: "./assets/img/03.jpg", duration: 20000, info: 0 },
+  { type: "image", src: "./assets/img/03.jpg", duration: 2000, info: 0 },
   { type: "video", src: "./assets/vid/02.mp4", duration: 2000, info: 1 },
 ];
 
@@ -27,7 +27,6 @@ let currentDuration = images[currentImageIndex].duration;
 function checkImageInfo() {
   if (images[currentImageIndex].info === 1) {
     buttonInfo.style.display = "flex";
-    
   } else {
     buttonInfo.style.display = "none";
   }
