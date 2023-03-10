@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      CodePen - Instagram Story Auto Play UX in Vue.js using Anime.js and
+      Hammer.js
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/storyv2.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <main id="app">
+      <nav>
+        <div v-for="(color, index) in colors">
+          <div></div>
+        </div>
+      </nav>
+      <section
+        v-for="(color, index) in colors"
+        :key="index"
+        :style="{ background: color }"
+        v-if="current == index"
+      ></section>
+    </main>
+    <!-- partial -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.3/vue.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="./assets/js/storyv2.js"></script>
+  </body>
+</html>
