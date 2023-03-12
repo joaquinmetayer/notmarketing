@@ -145,6 +145,9 @@ li div {
   background-size: cover;
   font-family: TUL;
 }
+.three{
+  padding: 20px;
+}
 .nmkt-logo-three {
   width: 700px;
 }
@@ -160,6 +163,20 @@ li div {
   position: relative;
   bottom: 20px;
   color: #ffffff80;
+}
+@media (max-width: 750px) {
+  .nmkt-logo-three {
+    width: 350px;
+    padding-left: 4px;
+  }
+  .somos-three {
+    font-size: 25px;
+  }
+  .porque-three {
+    font-size: 28px;
+    padding-left: 6px;
+    padding-top: 10px;
+  }
 }
 
 /* FOUR */
@@ -191,18 +208,31 @@ li div {
   background-size: cover;
   filter: brightness(40%);
 }
-.four-text-container{
+.four-text-container-big, .four-text-container-mobile{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   padding: 20px;
 }
-.four-text-container p {
+.four-text-container-big p, .four-text-container-mobile p{
   font-family: TUB;
   font-size: 50px;
   text-shadow: 20px 20px 50px #00000050;
   position: relative;
+}
+.four-text-container-mobile{
+  display: none;
+}
+@media (max-width: 500px) {
+  .four-text-container-big{
+    display: none;
+  }
+  .four-text-container-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /* FIVE */
