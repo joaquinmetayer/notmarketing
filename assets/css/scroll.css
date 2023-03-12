@@ -43,6 +43,12 @@ ul {
   scroll-snap-type: y mandatory;
   overflow: auto;
 }
+@media (max-width: 500px) {
+  li div {
+    padding-bottom: 20vh;
+  }
+  
+}
 li div {
   margin: 0 auto;
 }
@@ -159,23 +165,23 @@ li div {
 .porque-three {
   font-size: 56px;
   padding-left: 5px;
-  bottom: 10px;
+  bottom: 25px;
   position: relative;
-  bottom: 20px;
   color: #ffffff80;
 }
 @media (max-width: 750px) {
   .nmkt-logo-three {
-    width: 350px;
+    width: 320px;
     padding-left: 4px;
   }
   .somos-three {
-    font-size: 25px;
+    font-size: 20px;
+    padding-left: 5px;
   }
   .porque-three {
-    font-size: 28px;
-    padding-left: 6px;
-    padding-top: 10px;
+    font-size: 25px;
+    padding-left: 5px;
+    padding-top: 20px;
   }
 }
 
