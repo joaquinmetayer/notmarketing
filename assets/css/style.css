@@ -17,9 +17,17 @@
   ORANGE #ed6e1d
   YELLOW #facd07
 */
-
-*::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+  width: 7.5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: none; 
+  border-radius: 0;
+  background-color: #281e43;
+}
+::-webkit-scrollbar-thumb {
+  background: #ed6e1d; 
+  border-radius: 0;
 }
 *,
 *:after,
@@ -271,7 +279,7 @@ li div {
   width: fit-content;
 }
 .not {
-  height: 120px !important;
+  height: 100px !important;
   width: fit-content;
 }
 .not-code {
@@ -319,6 +327,9 @@ li div {
   .five-two div,
   .five-three div {
     padding: 20px;
+  }
+  .not-mkt{
+    padding-bottom: 10px;
   }
   .not-code {
     padding-bottom: 10px;
