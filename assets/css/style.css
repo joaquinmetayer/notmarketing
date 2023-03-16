@@ -321,7 +321,6 @@ li div {
 }
 @media (max-width: 500px) {
   .desktop-five {
-    display: none;
   }
   .mobile {
     display: flex;
