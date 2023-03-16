@@ -271,26 +271,23 @@ li div {
 .container-five a {
   padding: 20px;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
-.not-logo {
-  height: 100px !important;
-  width: fit-content;
-}
-.not {
-  height: 100px !important;
-  width: max-content;
+.not-mkt{
+  max-width: 250px;
 }
 .not-code {
   padding-top: 5px;
   position: relative;
   left: -2.5px;
+  max-width: 180px;
+
 }
 .not-agency {
+  max-width: 180px;
   position: relative;
   left: -5px;
 }
@@ -299,53 +296,22 @@ li div {
   position: relative;
   left: -5px;
 }
-.desktop-five {
-  display: flex;
-}
-.mobile {
-  display: none;
-}
-@media (max-width: 1000px) {
+
+@media (max-width: 600px) {
   .container-five {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     padding-bottom: 0 !important;
   }
-  .not {
-    height: 50px;
+  .container-five img{
+    width: 50%;
   }
-}
-@media (max-width: 500px) {
-  .desktop-five {
-  }
-  .mobile {
-    display: flex;
-  }
-  .five-one,
-  .five-two,
-  .five-three{
+  .container-five a{
     padding: 20px;
-  }
-  .not-mkt {
-    padding-bottom: 10px;
-    width: max-content;
-  }
-  .not-code {
-    padding-bottom: 10px;
-    padding-top: 5px;
-    position: relative;
-    left: -4.5px;
-    width: max-content;
-  }
-  .not-agency {
-    position: relative;
-    left: -5px;
-    padding-bottom: 10px;
-    width: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 }
 .five-one,
