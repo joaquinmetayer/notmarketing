@@ -326,9 +326,9 @@ li div {
   .mobile {
     display: flex;
   }
-  .five-one div,
-  .five-two div,
-  .five-three div {
+  .five-one,
+  .five-two,
+  .five-three{
     padding: 20px;
   }
   .not-mkt {
@@ -351,10 +351,7 @@ li div {
 }
 .five-one,
 .five-two,
-.five-three,
-.five-one div,
-.five-two div,
-.five-three div {
+.five-three{
   width: 100%;
   height: 100%;
   display: flex;
