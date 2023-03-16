@@ -301,8 +301,14 @@ li div {
   .container-five {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  .container-five img{
-    width: 50%;
+  .not-mkt{
+    max-width: 221px;
+  }
+  .not-code {
+    width: 163px;  
+  }
+  .not-agency {
+    width: 166px;
   }
   .container-five a{
     padding: 20px;
