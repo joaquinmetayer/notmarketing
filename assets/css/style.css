@@ -300,7 +300,6 @@ li div {
 @media (max-width: 600px) {
   .container-five {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    padding-bottom: 0 !important;
   }
   .container-five img{
     width: 50%;
@@ -313,7 +312,11 @@ li div {
     align-items: flex-start;
     justify-content: center;
   }
+  .five-three{
+    padding-bottom: 10vh !important;
+  }
 }
+
 .five-one,
 .five-two,
 .five-three{
