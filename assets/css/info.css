@@ -94,6 +94,7 @@ a {
   filter: invert(1) grayscale(1);
   width: 36px;
   height: 36px;
+  margin-left: 10px;
 }
 .link-nav-instagram {
   color: #e52762;
