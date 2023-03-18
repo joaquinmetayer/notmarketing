@@ -344,6 +344,7 @@ iframe{
 }
 
 .plans-container {
+  color: #fff;
   background-color: #281e43;
   font-family: TR;
   min-height: 400px;
@@ -368,16 +369,17 @@ iframe{
 .btn-primary {
   width: 100%;
   background-color: #25d366;
-  border: solid 3px #281e43;
+  border: solid 0px #281e43;
   font-family: TUB;
+  padding: 20px;
 }
 .btn-primary:hover {
   background-color: #21c35c;
-  border: solid 3px #281e43;
+  border: solid 0px #281e43;
 }
 .card-plans {
-  background-color: #ffffff;
-  border: 3px solid #e52762;
+  background-color: #ffffff50;
+  border: 0px solid #e52762;
   padding: 0px 20px;
   border-radius: 10px;
   display: flex;
