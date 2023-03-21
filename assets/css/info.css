@@ -148,8 +148,20 @@ a {
   }
 }
 
-.hero {
+.hero-desktop {
   height: 100vh;
+}
+.hero-mobile{
+  height: 100vh;
+  display: none;
+}
+@media (max-width: 750px) {
+  .hero-desktop {
+    display: none;
+  }
+  .hero-mobile{
+    display: block;
+  }
 }
 
 .products-container {
