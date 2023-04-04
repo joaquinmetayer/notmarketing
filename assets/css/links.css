@@ -42,6 +42,9 @@
 a {
   text-decoration: none;
 }
+body{
+  background-color: #000;
+}
 .pepe {
   background-image: url(../img/pepephoto.gif);
   background-position: center;
@@ -88,11 +91,9 @@ a {
   height: 20vh;
 }
 .btn-not-mkt{
-  border-top: 2px solid #ffffff;
   background-color: #271d42;
 }
 .btn-not-code{
-  border-top: 2px solid #ffffff;
   background-color: #111111;
 }
 .mkt {
@@ -105,7 +106,6 @@ a {
   height: 85px;
 }
 .btn-not-agency {
-  border-top: 2px solid #ffffff;
   background-color: #000000;
   width: 100%;
   padding-bottom: 90px;
