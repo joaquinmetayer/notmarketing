@@ -88,7 +88,7 @@ a {
   height: 20vh;
 }
 .btn-not-mkt{
-  border-top: 3px solid #ffffff;
+  border-top: 2px solid #ffffff;
   background-color: #271d42;
 }
 .btn-not-code{
@@ -113,5 +113,16 @@ a {
   display: flex;
   align-items: center;
   height: 30vh;
+}
+@media (min-width: 500px) {
+  .btn-not-agency, .btn-not-code, .btn-not-mkt{
+    justify-content: center;
+  }
+  .btn-not-code img{
+    padding-right: 60px;
+  }
+  .btn-not-agency img{
+    padding-right: 75px;
+  }
 }
 
