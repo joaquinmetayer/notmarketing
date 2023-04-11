@@ -10,12 +10,7 @@
   font-family: TUL;
   src: url("../font/PPTelegraf-UltraLight.otf");
 }
-.tub {
-  font-family: TUB;
-}
-.tul {
-  font-family: TUL;
-}
+
 /* COLORS 
   BLUE   #281e43
   PINK   #e52762
@@ -465,5 +460,3 @@ a p {
   width: 50px;
   position: relative;
 }
-
-
