@@ -492,6 +492,7 @@ a p {
   width: 200px;
   height: 200px;
   border: 5px solid #fff !important;
+  filter: brightness(1.3) grayscale(1);
 }
 .a-wunderline{
   text-decoration: underline;
