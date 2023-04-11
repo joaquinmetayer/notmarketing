@@ -10,7 +10,12 @@
   font-family: TUL;
   src: url("../font/PPTelegraf-UltraLight.otf");
 }
-
+.tub {
+  font-family: TUB;
+}
+.tul {
+  font-family: TUL;
+}
 /* COLORS 
   BLUE   #281e43
   PINK   #e52762
@@ -459,4 +464,50 @@ a p {
 .instagram {
   width: 50px;
   position: relative;
+}
+
+
+.nosotros{
+  /*background-color: #121112;*/
+  background-color: #121112;
+}
+.unico{
+  color: #ffffff90;
+}
+.saluting{
+  width: 80px;
+  padding: 0 10px 0 10px;
+}
+.img-portada-nosotros{
+  height: 300px;
+}
+.nosotros-main-container-up{
+  position: absolute;
+  top: 150px;
+  width: 100%;
+}
+.profile{
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border: 5px solid #fff !important;
+}
+.a-wunderline{
+  text-decoration: underline;
+}
+.nots-about{
+  filter: brightness(90%);
+  padding: 0 20px 0 20px;
+}
+.notmkt-img, .notcode-img, .notagency-img{
+  margin: 0 auto;
+  height: auto;
+}
+.footer-nosotros{
+  color: #ffffff;
+  padding: 40px;
+  font-family: TR;
+  text-align: center;
+  background-color: #121112;
 }
