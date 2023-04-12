@@ -1,7 +1,10 @@
-.nosotros-container {
+.nosotros-body {
   background-color: #121112;
+}
+.nosotros-container {
   font-family: TR;
   color: #fff;
+  position: relative;
 }
 .nosotros-portada {
   height: 300px;
@@ -15,64 +18,77 @@
   filter: grayscale(1) brightness(1.4);
   margin-bottom: 30px;
 }
-.nosotros-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
+.nosotros-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 170px;
 }
-.nosotros-text-center{
-    max-width: 700px;
-    text-align: center;
+.nosotros-text-center {
+  max-width: 700px;
+  text-align: center;
 }
-.nosotros-frase{
-    font-family: TUB;
-    font-size: 30px;
-    padding-bottom: 15px;
+.nosotros-frase {
+  font-family: TUB;
+  font-size: 30px;
+  padding-bottom: 15px;
 }
-.nosotros-p{
-    font-size: 19px;
+.nosotros-p {
+  font-size: 19px;
 }
-.nosotros-img-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 20px;
-    gap: 10px;
-    width: 100%;
-    max-width: 600px;
+.nosotros-img-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
 }
 
-.nosotros-img-not-ag{
-    height: 64px;
-    width: fit-content;
+.nosotros-img-not-ag {
+  height: 64px;
+  width: fit-content;
 }
-.nosotros-img-not-mk{
-    height: 70px;
-    width: fit-content;
-
+.nosotros-img-not-mk {
+  height: 70px;
+  width: fit-content;
 }
-.nosotros-img-not-cd{
-    height: 67px;
-    width: fit-content;
+.nosotros-img-not-cd {
+  height: 67px;
+  width: fit-content;
 }
-@media (max-width: 600px) {
-    .nosotros-img-not-ag{
-        height: 34px;
-    }
-    .nosotros-img-not-mk{
-        height: 40px;
-    }
-    .nosotros-img-not-cd{
-        height: 37px;
-    }
-}
-.nosotros-final-frase{
+.nosotros-final-frase {
     font-family: TUB;
-    font-size: 40px;
+    font-size: 55px;
     text-align: center;
     padding: 30px 20px;
+  }
+@media (max-width: 600px) {
+  .nosotros-img-not-ag {
+    height: 34px;
+  }
+  .nosotros-img-not-mk {
+    height: 40px;
+  }
+  .nosotros-img-not-cd {
+    height: 37px;
+  }
+  .nosotros-final-frase {
+    font-size: 45px;
+  }
 }
-
+.nosotros-emojis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 60px 20px;
+  gap: 40px;
+}
+.nosotros-emoji {
+  width: 80px;
+}
