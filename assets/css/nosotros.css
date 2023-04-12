@@ -92,3 +92,7 @@
 .nosotros-emoji {
   width: 80px;
 }
+.nosotros-link{
+  color: #fff;
+  text-decoration: underline;
+}
