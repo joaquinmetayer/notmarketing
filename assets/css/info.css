@@ -72,6 +72,8 @@ a {
 }
 .notmkt-nav {
   width: 140px;
+  height: auto;
+  max-width: 100%;
 }
 .links-nav {
   display: flex;
@@ -114,6 +116,8 @@ a {
 @media (max-width: 600px) {
   .notmkt-nav {
     width: 100px;
+    height: auto;
+    max-width: 100%;
   }
   .links-nav {
     display: none;
