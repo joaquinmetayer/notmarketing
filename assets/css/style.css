@@ -165,7 +165,13 @@ input{
   width: 100%;
   height: 900px;
 }
+.spacer{
+  height: 5vh;
+}
 @media only screen and (max-width: 1000px) {
+  .spacer{
+    height: 10vh;
+  }
   .calendly-inline-widget{
     width: 100%;
     height: 1100px;
