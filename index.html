@@ -11,17 +11,39 @@
       type="image/x-icon"
     />
   </head>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        emailjs.init('rYuO8j41bIvflyKeg');
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const serviceID = "service_yoreap6";
+            const templateID = "template_46b9sxf";
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                    window.location.href = "/training.html"
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+  </script>
   <body>
       <div class="modal" id="modal">
-        <form action="">
+        <form id="contact-form">
           <p class="form-text">Dejanos tus datos para acceder al entrenamiento!
           </p>
           <input type="text" required placeholder="Tu Nombre y Apellido" name="name" email>
           <input type="email" name="email" id="email" placeholder="Tu Email">
-          <button type="submit" class="button-form">VER ENTRENAMIENTO</a>
+          <button type="submit" class="button-form">VER ENTRENAMIENTO</button>
           <p class="form-detail-text">Tu informacion esta protegida. Nunca te enviaremos SPAM.</p>
         </form>
-      </div>
+    </div>
     <img src="./assets/img/LOGO BLANCO.png" class="head">
     <div class="main-container">
       <p class="title">Como crear <span>VIDEOS PROFESIONALES</span> usando tu smartphone y MEJORAR LA CALIDAD de tu contenido</p>
@@ -31,6 +53,5 @@
       <button class="button-landing" onclick="document.getElementById('modal').style.display='flex'">VER ENTRENAMIENTO</button>
     </div>
     <p class="footer">&copy 2024. All rigths reserved.</p>
-    
   </body>
 </html>
