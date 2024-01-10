@@ -191,4 +191,7 @@ embed{
     margin-top: 10px;
     margin-bottom: 20px;
   }
+  body{
+    background-position: left;
+  }
 }
