@@ -34,6 +34,9 @@ body{
   width: 100%;
   background-color: #0c0c0c;
   padding: 20px 0 10px;
+  background-image: url("../img/FONDO\ VIOLETA\ POINT.png");
+  background-position: center;
+  background-size: cover;
 }
 a {
   text-decoration: none;
@@ -50,10 +53,8 @@ img{
   font-family: tr;
 }
 .main-container{
-  margin: 20px;
-  background-image: url("../img/FONDO\ VIOLETA\ POINT.png");
-  background-position: center;
-  background-size: cover;
+  padding: 20px;  
+  
   min-height: 90vh;
   width: 100%;
   display: flex;
@@ -63,7 +64,6 @@ img{
 }
 .img-video{
   width: 100%;
-  padding: 20px ;
   max-width: 900px;
 }
 .title{
@@ -105,16 +105,17 @@ input{
   border-radius: 8px;
   border: 0;
   font-family: tub;
-  font-size: 25px;
+  font-size: 20px;
   margin: 0 0 40px 0;
   background-color: #461cde;
-  max-width: 860px;
+  max-width: 900px;
   cursor: pointer;
   text-align: center;
 }
 .form-detail-text{
   font-family: tul;
   padding-top: 5px;
+  text-align: center;
 }
 .modal{
   position: fixed;
@@ -138,14 +139,18 @@ input{
   border-radius: 8px;
   border: 0;
   font-family: tub;
-  font-size: 25px;
+  font-size: 20px;
   background-color: #461cde;
   cursor: pointer;
   text-align: center;
 }
+embed{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .embed-video{
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9 !important;
 }
 .title-call{
   font-family: tub;
@@ -165,23 +170,25 @@ input{
   width: 100%;
   height: 900px;
 }
-.spacer{
-  height: 5vh;
-}
 @media only screen and (max-width: 1000px) {
-  .spacer{
-    height: 10vh;
+  .title{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 25px;
   }
   .calendly-inline-widget{
     width: 100%;
     height: 1100px;
   }
   .button-landing{
-    width: 95%;
-    margin: 20px !important;
+    margin-top: 30px !important;
   }
   .title-description{
     padding: 0 20px 0 20px;
     padding-bottom: 40px;
+  }
+  embed{
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }
